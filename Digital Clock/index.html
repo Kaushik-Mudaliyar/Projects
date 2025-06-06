@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock Using Javascript</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="image/favicon.jpg" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="clock">
+        <span id="hrs">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+      </div>
+    </div>
+    <script>
+      setInterval(function () {
+        let currentTime = new Date();
+        let hours = document.getElementById("hrs");
+        let minutes = document.getElementById("min");
+        let seconds = document.getElementById("sec");
+
+        if (
+          currentTime.getHours() < 10 &&
+          currentTime.getMinutes() < 10 &&
+          currentTime.getSeconds() < 10
+        ) {
+          hours.innerHTML = `0${currentTime.getHours()}`;
+          minutes.innerHTML = `0${currentTime.getMinutes()}`;
+          seconds.innerHTML = `0${currentTime.getSeconds()}`;
+        } else {
+          hours.innerHTML = currentTime.getHours();
+          minutes.innerHTML = currentTime.getMinutes();
+          seconds.innerHTML = currentTime.getSeconds();
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
