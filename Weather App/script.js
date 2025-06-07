@@ -1,3 +1,4 @@
+import API_KEY from "./API_key";
 document.addEventListener("DOMContentLoaded", () => {
   const cityInput = document.getElementById("city-input");
   const getWeatherBtn = document.getElementById("get-weather-btn");
@@ -7,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const descriptionDisplay = document.getElementById("description");
   const errorMessage = document.getElementById("error-message");
 
-  const API_KEY = "948149a9032de1d66b25855bd0cd423a";
+  const myKey= API_KEY
 
   getWeatherBtn.addEventListener("click", () => {
     getWeather();
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchWeatherData(city) {
     // fetch the weather data from the weather api
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${myKey}`;
     const response = await fetch(url);
     // console.log(typeof response);
     // console.log("response", response);
