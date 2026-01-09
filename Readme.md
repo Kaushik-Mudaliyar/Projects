@@ -5,6 +5,7 @@ A collection of small web development projects built using HTML, CSS, and JavaSc
 ## 📌 List of Projects
 
 - Todo App
+- Snake Game
 - Digital Clock
 - Expense Tracker
 - Quiz App
